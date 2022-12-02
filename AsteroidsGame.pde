@@ -1,5 +1,6 @@
 Star[] nightSky = new Star[500];
 Spaceship bob = new Spaceship();
+ArrayList <Asteroid> dwayne = new ArrayList <Asteroid>();
 boolean turnLeft, turnRight, moveForward, moveBackward;
 public void setup() 
 {
@@ -7,11 +8,22 @@ public void setup()
   for(int i = 0; i < nightSky.length; i++){
     nightSky[i] = new Star();
   }
+  for(int i = 0; i < 20; i++){
+    dwayne.add(0, new Asteroid());
+  }
 }
 public void draw(){
   background(0);
   for(int i = 0; i < nightSky.length; i++){
    nightSky[i].show();  
+  }
+  for(int i = 0; i < dwayne.size(); i++){
+   dwayne.get(i).move();
+   dwayne.get(i).show();
+   float d = dist((float)bob.getX(), (float)bob.getY(), (float)dwayne.get(i).getX(), (float)dwayne.get(i).getY());
+   if (d < 40){
+     dwayne.remove(i);
+   }
   }
   if(turnRight == true){
     bob.turn(5);
