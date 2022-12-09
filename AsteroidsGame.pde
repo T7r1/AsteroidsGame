@@ -1,6 +1,7 @@
 Star[] nightSky = new Star[500];
 Spaceship bob = new Spaceship();
 ArrayList <Asteroid> dwayne = new ArrayList <Asteroid>();
+ArrayList <Bullet> shot = new ArrayList <Bullet>();
 boolean turnLeft, turnRight, moveForward, moveBackward;
 public void setup() 
 {
@@ -20,8 +21,8 @@ public void draw(){
   for(int i = 0; i < dwayne.size(); i++){
    dwayne.get(i).move();
    dwayne.get(i).show();
-   float d = dist((float)bob.getX(), (float)bob.getY(), (float)dwayne.get(i).getX(), (float)dwayne.get(i).getY());
-   if (d < 40){
+   float dShip = dist((float)bob.getX(), (float)bob.getY(), (float)dwayne.get(i).getX(), (float)dwayne.get(i).getY());
+   if(dShip < 40){
      dwayne.remove(i);
    }
   }
@@ -47,6 +48,20 @@ public void draw(){
   }
   bob.move();
   bob.show();
+  for(int i = 0; i < shot.size(); i++){
+    shot.get(i).move();
+    shot.get(i).show();
+  }
+  for(int i = 0; i < shot.size(); i++){
+    for(int j = 0; j < dwayne.size(); j++){
+      float dBullet = dist((float)shot.get(i).getX(), (float)shot.get(i).getY(), (float)dwayne.get(j).getX(), (float)dwayne.get(j).getY());
+      if(dBullet < 75){
+        shot.remove(i);
+        dwayne.remove(j);
+        break;
+      }
+    }
+  }
 }
 
 public void keyPressed(){
@@ -64,6 +79,9 @@ public void keyPressed(){
  }
  if(key == 's'){
    moveBackward = true;
+ }
+ if(key == ' '){
+   shot.add(new Bullet(bob));
  }
 }
 
