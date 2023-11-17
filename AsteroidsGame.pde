@@ -34,12 +34,13 @@ public void draw()
   //your code here
 }
 public void keyPressed(){
-  //hyperspace
   if(key == ' '){
-     bob.setspeedx(0);
-     bob.setspeedy(0);
-     bob.setcx();
-     bob.setcy();
+      bob.hyperspace();
+
+     //bob.setspeedx(0);
+     //bob.setspeedy(0);
+     //bob.setcx();
+     //bob.setcy();
   }
   if(key == 'w'){
 move=true;  
