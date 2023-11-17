@@ -1,101 +1,77 @@
-Star[] nightSky = new Star[500];
+//your variable declarations here
 Spaceship bob = new Spaceship();
-ArrayList <Asteroid> dwayne = new ArrayList <Asteroid>();
-ArrayList <Bullet> shot = new ArrayList <Bullet>();
-boolean turnLeft, turnRight, moveForward, moveBackward;
+Star [] bom=new Star [500];
+boolean move, turnr, turnl =false;
+
 public void setup() 
 {
-  size(750,750);
-  for(int i = 0; i < nightSky.length; i++){
-    nightSky[i] = new Star();
-  }
-  for(int i = 0; i < 20; i++){
-    dwayne.add(0, new Asteroid());
-  }
+  size(1000,1000);
+  for (int i=0;i<bom.length;i++)
+    bom[i]=new Star();
+ //   bob.show();
+  //your code here
 }
-public void draw(){
+public void draw() 
+{
+    loop();
+
   background(0);
-  for(int i = 0; i < nightSky.length; i++){
-   nightSky[i].show();  
-  }
-  for(int i = 0; i < dwayne.size(); i++){
-   dwayne.get(i).move();
-   dwayne.get(i).show();
-   float dShip = dist((float)bob.getX(), (float)bob.getY(), (float)dwayne.get(i).getX(), (float)dwayne.get(i).getY());
-   if(dShip < 40){
-     dwayne.remove(i);
-   }
-  }
-  if(turnRight == true){
-    bob.turn(5);
-  } else {
-    bob.turn(0);
-  }
-  if(turnLeft == true){
-    bob.turn(-5);
-  } else {
-    bob.turn(0);
-  }
-  if(moveForward == true){
-    bob.accelerate(0.1);
-  } else {
-    bob.accelerate(0);
-  }
-  if(moveBackward == true){
-    bob.accelerate(-0.1);
-  } else {
-    bob.accelerate(0);
-  }
-  bob.move();
-  bob.show();
-  for(int i = 0; i < shot.size(); i++){
-    shot.get(i).move();
-    shot.get(i).show();
-  }
-  for(int i = 0; i < shot.size(); i++){
-    for(int j = 0; j < dwayne.size(); j++){
-      float dBullet = dist((float)shot.get(i).getX(), (float)shot.get(i).getY(), (float)dwayne.get(j).getX(), (float)dwayne.get(j).getY());
-      if(dBullet < 75){
-        shot.remove(i);
-        dwayne.remove(j);
-        break;
-      }
-    }
-  }
-}
+  for (int i=0;i<500;i++)
+  bom[i].show();
+     bob.show();
+     bob.move();
+     
+     //IFFFFFFFFFFFS
+     
+     
+     if (move==true)
+     bob.accelerate(.2);
+ if (turnr==true)
+      bob.turn(7);
+ if (turnl==true)
+      bob.turn(-7);
 
+  //your code here
+}
 public void keyPressed(){
- if(key == 'r'){
-   bob.hyperspace();
- }
- if(key == 'd'){
-   turnRight = true;
- }
- if(key == 'a'){
-   turnLeft = true;
- }
- if(key == 'w'){
-   moveForward = true;
- }
- if(key == 's'){
-   moveBackward = true;
- }
- if(key == ' '){
-   shot.add(new Bullet(bob));
- }
-}
-
-public void keyReleased(){
-  if(key == 'd'){
-    turnRight = false;
-  }
-  if(key == 'a'){
-    turnLeft = false;
+  //hyperspace
+  if(key == ' '){
+     bob.setspeedx(0);
+     bob.setspeedy(0);
+     bob.setcx();
+     bob.setcy();
   }
   if(key == 'w'){
-    moveForward = false;
+move=true;  
   }
-  if(key == 's'){
-    moveBackward = false;
+  if(key == 'd'){
+turnr=true;  
+     //bob.setspeedx(Math.cos(-bob.getDirection()*(Math.PI/180))*5);
+     //bob.setspeedy(-Math.sin(-bob.getDirection()*(Math.PI/180))*5);
+
+//System.out.println(-bob.myPointDirection);
+//  System.out.println(bob.myYspeed);
+//          System.out.println(bob.myXspeed);
+} 
+  if(key == 'a'){
+turnl=true;  
+     //bob.setspeedx(Math.cos(-bob.getDirection()*(Math.PI/180))*5);
+     //bob.setspeedy(-Math.sin(-bob.getDirection()*(Math.PI/180))*5);
+     //System.out.println(-bob.myPointDirection);
+     //     System.out.println(bob.myYspeed);
+     //     System.out.println(bob.myXspeed);
+
+
   }
+}
+public void keyReleased(){
+  if(key == 'w'){
+move=false;  
+}
+  if(key == 'd'){
+turnr=false;  
+} 
+  if(key == 'a'){
+turnl=false;
+}
 }
