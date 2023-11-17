@@ -1,8 +1,8 @@
 class Star{ //note that this class does NOT extend Floater
 private int x,y;
 public Star(){
-  x=(int)(Math.random()*500);
-  y=(int)(Math.random()*500);
+  x=(int)(Math.random()*width);
+  y=(int)(Math.random()*height);
   //your code here
 }
 public void show(){
