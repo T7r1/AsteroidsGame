@@ -16,14 +16,22 @@ myColor=255;
 myXspeed=myYspeed=0; //holds the speed of travel in the x and y directions   
 myPointDirection=0;
     }
+   public void hyperspace(){
+     myCenterX=(int)(Math.random()*width);
+  myCenterY=(int)(Math.random()*height);
+  myXspeed=0;
+  myYspeed=0;
+  myPointDirection=Math.random()*360;
+
+   }
   public double getDirection(){
   return myPointDirection;
   }
   public void  setcx(){
-  myCenterX=(int)(Math.random()*width);
+  myCenterX=(Math.random()*width);
   }
   public void  setcy(){
-  myCenterX=(int)(Math.random()*height);
+  myCenterX=(Math.random()*height);
   }
   public void  setspeedx(double x){
   myXspeed=x;
