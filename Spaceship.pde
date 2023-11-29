@@ -12,7 +12,7 @@ class Spaceship extends Floater
    xCorners[2]= -8;
     yCorners[2]= 8;
 myColor=255;   
- myCenterX= myCenterY=250; //holds center coordinates   
+ myCenterX= myCenterY=500; //holds center coordinates   
 myXspeed=myYspeed=0; //holds the speed of travel in the x and y directions   
 myPointDirection=0;
     }
