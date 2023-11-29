@@ -1,11 +1,14 @@
 //your variable declarations here
 Spaceship bob = new Spaceship();
 Star [] bom=new Star [500];
+Asteroid [] boo=new Asteroid[100];
 boolean move, turnr, turnl =false;
 
 public void setup() 
 {
   size(1000,1000);
+  for(int i=0;i<boo.length;i++)
+    boo[i]=new Asteroid();
   for (int i=0;i<bom.length;i++)
     bom[i]=new Star();
  //   bob.show();
@@ -16,7 +19,11 @@ public void draw()
     loop();
 
   background(0);
-  for (int i=0;i<500;i++)
+    for(int i=0;i<boo.length;i++){
+boo[i].show();
+boo[i].move();
+    }
+  for (int i=0;i<bom.length;i++)
   bom[i].show();
      bob.show();
      bob.move();
