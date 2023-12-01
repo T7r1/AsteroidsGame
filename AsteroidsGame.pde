@@ -28,7 +28,7 @@ boo.get(i).show();
 boo.get(i).move();
 if (sqrt((float)(((boo.get(i).getX()-bob.getX()))*((boo.get(i).getX()-bob.getX()))+((boo.get(i).getY()-bob.getY()))*((boo.get(i).getY()-bob.getY()))))<10){
   boo.remove(i);
-  System.out.println(boo.size());
+//  System.out.println(boo.size());
 
 }
     }
