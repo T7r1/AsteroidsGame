@@ -26,6 +26,11 @@ public void draw()
     for(int i=0;i<boo.size();i++){
 boo.get(i).show();
 boo.get(i).move();
+if (sqrt((float)(((boo.get(i).getX()-bob.getX()))*((boo.get(i).getX()-bob.getX()))+((boo.get(i).getY()-bob.getY()))*((boo.get(i).getY()-bob.getY()))))<10){
+  boo.remove(i);
+  System.out.println(boo.size());
+
+}
     }
   for (int i=0;i<bom.length;i++)
   bom[i].show();
