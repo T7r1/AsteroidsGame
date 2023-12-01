@@ -6,10 +6,11 @@ class Asteroid extends Floater
   xCorners=new int[corners];   
   yCorners=new int[corners];  
   for (int i=0;i<corners;i++){
-   xCorners[i]=(int)(Math.cos(i*2*Math.PI/corners)*8);
-   yCorners[i]=(int)(Math.sin(i*2*Math.PI/corners)*8);
+   xCorners[i]=(int)(Math.cos(i*2*Math.PI/corners)*10);
+   yCorners[i]=(int)(Math.sin(i*2*Math.PI/corners)*10);
   // System.out.println(xCorners[i]);
-  //    System.out.println(Math.cos(0));
+   
+ //    System.out.println(Math.cos(0));
 
  //  System.out.println(yCorners[i]);
   }
