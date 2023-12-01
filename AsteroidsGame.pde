@@ -20,18 +20,21 @@ public void setup()
 }
 public void draw() 
 {
+//int sec=second();
     loop();
 
   background(0);
     for(int i=0;i<boo.size();i++){
 boo.get(i).show();
 boo.get(i).move();
-if (sqrt((float)(((boo.get(i).getX()-bob.getX()))*((boo.get(i).getX()-bob.getX()))+((boo.get(i).getY()-bob.getY()))*((boo.get(i).getY()-bob.getY()))))<10){
+if (sqrt((float)(((boo.get(i).getX()-bob.getX()))*((boo.get(i).getX()-bob.getX()))+((boo.get(i).getY()-bob.getY()))*((boo.get(i).getY()-bob.getY()))))<12){
   boo.remove(i);
-//  System.out.println(boo.size());
+  System.out.println(boo.size());
 
 }
     }
+    if (boo.size()<100)
+    boo.add(new Asteroid());
   for (int i=0;i<bom.length;i++)
   bom[i].show();
      bob.show();
