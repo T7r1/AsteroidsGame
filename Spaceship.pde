@@ -12,7 +12,7 @@ class Spaceship extends Floater
    xCorners[2]= -8;
     yCorners[2]= 8;
 myColor=255;   
-System.out.print(width);
+//System.out.print(width);
  myCenterX= 500;
  myCenterY=500; //holds center coordinates   
 myXspeed=myYspeed=0; //holds the speed of travel in the x and y directions   
