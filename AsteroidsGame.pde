@@ -91,7 +91,7 @@ public void draw()
   //your code here
 }
 void mousePressed() {
-  if (
+ //
   oob.add(new Bullet(bob));
 }
 public void keyPressed() {
