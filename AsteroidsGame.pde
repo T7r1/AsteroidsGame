@@ -42,7 +42,7 @@ public void draw()
       boo.add(new Asteroid());
 
       hp--;
-      System.out.println("HP:"+ hp);
+      //system.out.println("HP:"+ hp);
     }
     //bullet collison
     for (int u=oob.size()-1; u>=0; u--) {
@@ -50,12 +50,12 @@ public void draw()
         oob.remove(u);
         boo.add(new Asteroid());
         score++;
-        System.out.println("score: "+score);
+        //system.out.println("score: "+score);
 
         boo.remove(i);
       }
 
-      // System.out.println(boo.size());
+      // //system.out.println(boo.size());
     }
   }
   //if (boo.size()<100)
@@ -111,17 +111,17 @@ public void keyPressed() {
     //bob.setspeedx(Math.cos(-bob.getDirection()*(Math.PI/180))*5);
     //bob.setspeedy(-Math.sin(-bob.getDirection()*(Math.PI/180))*5);
 
-    //System.out.println(-bob.myPointDirection);
-    //  System.out.println(bob.myYspeed);
-    //          System.out.println(bob.myXspeed);
+    ////system.out.println(-bob.myPointDirection);
+    //  //system.out.println(bob.myYspeed);
+    //          //system.out.println(bob.myXspeed);
   } 
   if (key == 'a') {
     turnl=true;  
     //bob.setspeedx(Math.cos(-bob.getDirection()*(Math.PI/180))*5);
     //bob.setspeedy(-Math.sin(-bob.getDirection()*(Math.PI/180))*5);
-    //System.out.println(-bob.myPointDirection);
-    //     System.out.println(bob.myYspeed);
-    //     System.out.println(bob.myXspeed);
+    ////system.out.println(-bob.myPointDirection);
+    //     //system.out.println(bob.myYspeed);
+    //     //system.out.println(bob.myXspeed);
   }
 }
 
