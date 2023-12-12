@@ -28,8 +28,17 @@ myPointDirection=0;
   myPointDirection=Math.random()*360;
 
    }
-  public double getDirection(){
+    public double getDirection(){
   return myPointDirection;
+  }
+    public double getcenx(){
+  return myCenterX;
+  }   public double getceny(){
+  return myCenterY;
+  }   public double getspx(){
+  return myXspeed;
+  }   public double getspy(){
+  return myYspeed;
   }
 //  public double  getX(){
 //return myCenterX;  }
