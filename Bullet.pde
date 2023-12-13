@@ -9,9 +9,9 @@ myColor=255;
  myCenterX= ship.getcenx();
  myCenterY=ship.getceny(); //holds center coordinates   
 myXspeed=ship.getspx();
-myYspeed=ship.getspx(); //holds the speed of travel in the x and y directions   
+myYspeed=ship.getspy(); //holds the speed of travel in the x and y directions   
 myPointDirection=ship.getDirection();
-  
+  //System.out.print(myPointDirection);
   accelerate(6);
   
   
