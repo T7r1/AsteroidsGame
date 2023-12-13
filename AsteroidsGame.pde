@@ -3,14 +3,15 @@ Spaceship bob = new Spaceship();
 Star [] bom=new Star [500];
 ArrayList <Bullet> oob=new ArrayList <Bullet>();
 ArrayList <Asteroid> boo=new ArrayList <Asteroid>();
-
+boolean play=true;
 boolean move, turnr, turnl =false;
 int score=0;
 int hp=100;
+int hscore=0;
 public void setup() 
 {
   size(1000, 1000);
-  for (int i=0; i<100; i++) {
+  for (int i=0; i<75; i++) {
     boo.add(new Asteroid());
   }
   //for(int i=0;i<boo.size();i++)
@@ -23,13 +24,18 @@ public void setup()
 public void draw() 
 {
   loop();
-
+if (score>hscore)
+hscore=score;
   background(0);
   fill(255, 255, 0);
 
   rect(790, 10, hp*2, 30);
   fill(0);
-  text(hp+"/100", (790*2+hp*2)/2-20, 30);  
+  text(hp+"/100", (790*2+hp*2)/2-20, 30); 
+  fill(255);
+  if(play==true)
+  text("Score: "+score, (820), 70);  
+  text("High Score: "+hscore, (820), 85);  
 
   //Asteroid
   fill(255);
@@ -37,12 +43,14 @@ public void draw()
     boo.get(i).show();
     boo.get(i).move();
     //ship collision
+    if (play==true){
     if (sqrt((float)(((boo.get(i).getcenx()-bob.getcenx()))*((boo.get(i).getcenx()-bob.getcenx()))+((boo.get(i).getceny()-bob.getceny()))*((boo.get(i).getceny()-bob.getceny()))))<12) {
       boo.remove(i);
       boo.add(new Asteroid());
 
       hp--;
-      //system.out.println("HP:"+ hp);
+      score++;
+      System.out.println("HP:"+ hp);
     }
     //bullet collison
     for (int u=oob.size()-1; u>=0; u--) {
@@ -50,13 +58,14 @@ public void draw()
         oob.remove(u);
         boo.add(new Asteroid());
         score++;
-        //system.out.println("score: "+score);
+        System.out.println("score: "+score);
 
         boo.remove(i);
       }
 
-      // //system.out.println(boo.size());
+      // System.out.println(boo.size());
     }
+  }
   }
   //if (boo.size()<100)
 
@@ -74,6 +83,8 @@ public void draw()
       oob.remove(i);
     }
   }
+  if (hp>0){
+    play=true;
   //Spaceship
   bob.show();
   bob.move();
@@ -82,17 +93,40 @@ public void draw()
 
 
   if (move==true)
-    bob.accelerate(.2);
+    bob.accelerate(.1);
   if (turnr==true)
     bob.turn(7);
   if (turnl==true)
     bob.turn(-7);
+}else {
+  play=false;
+   fill(200,200,200,100);
 
+ rect(0,0,1000,1000);
+ fill(50,50,50);
+ rect(400,450,200,100);
+ fill(255);
+ text("Game Over",500-30,475);
+   text("Score: "+score, (500-20), 497);  
+
+ fill(200,200,200);
+ rect(461,507,78,26);
+ fill(50,50,50);
+  text("Retry",485,524);
+  
+
+}
   //your code here
 }
+
 void mousePressed() {
- //
+ 
+  if (play==true)
   oob.add(new Bullet(bob));
+  else if((mouseX<=539&&mouseX>=461)&&(mouseY<533&&mouseY>=507)){
+  hp=100;
+  score=0;
+  }
 }
 public void keyPressed() {
   if (key == ' ') {
@@ -111,17 +145,17 @@ public void keyPressed() {
     //bob.setspeedx(Math.cos(-bob.getDirection()*(Math.PI/180))*5);
     //bob.setspeedy(-Math.sin(-bob.getDirection()*(Math.PI/180))*5);
 
-    ////system.out.println(-bob.myPointDirection);
-    //  //system.out.println(bob.myYspeed);
-    //          //system.out.println(bob.myXspeed);
+    //System.out.println(-bob.myPointDirection);
+    //  System.out.println(bob.myYspeed);
+    //          System.out.println(bob.myXspeed);
   } 
   if (key == 'a') {
     turnl=true;  
     //bob.setspeedx(Math.cos(-bob.getDirection()*(Math.PI/180))*5);
     //bob.setspeedy(-Math.sin(-bob.getDirection()*(Math.PI/180))*5);
-    ////system.out.println(-bob.myPointDirection);
-    //     //system.out.println(bob.myYspeed);
-    //     //system.out.println(bob.myXspeed);
+    //System.out.println(-bob.myPointDirection);
+    //     System.out.println(bob.myYspeed);
+    //     System.out.println(bob.myXspeed);
   }
 }
 
