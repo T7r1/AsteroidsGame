@@ -50,7 +50,7 @@ hscore=score;
 
       hp--;
       score++;
-      System.out.println("HP:"+ hp);
+  //    System.out.println("HP:"+ hp);
     }
     //bullet collison
     for (int u=oob.size()-1; u>=0; u--) {
@@ -58,7 +58,7 @@ hscore=score;
         oob.remove(u);
         boo.add(new Asteroid());
         score++;
-        System.out.println("score: "+score);
+      //  System.out.println("score: "+score);
 
         boo.remove(i);
       }
