@@ -85,11 +85,11 @@ class Floater //Do NOT modify the Floater class! Make changes in the Spaceship c
   }   public double getspy(){
   return myYspeed;
   }
-public void set speedx(double b){
+public void setspeedx(double b){
 myXspeed=b;
-} public void set speedy(double b){
+} public void setspeedy(double b){
 myyspeed=b;
-} public void set direct(double j){
+} public void direct(double j){
 myPointDirection=j;
 }
 
