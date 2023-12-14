@@ -91,5 +91,11 @@ myXspeed=b;
 myyspeed=b;
 } public void direct(double j){
 myPointDirection=j;
+} Public void setcx(double a){
+myCenterX=a;
+}Public void setcy(double w){
+myCenterY=w;
+}
+
 }
 
