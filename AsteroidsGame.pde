@@ -127,7 +127,7 @@ void mousePressed() {
   hp=100;
 speedx(0);
 speedy(0);
-
+direct(0);
   score=0;
   }
 }
