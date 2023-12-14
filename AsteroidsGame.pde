@@ -6,7 +6,7 @@ ArrayList <Asteroid> boo=new ArrayList <Asteroid>();
 boolean play=true;
 boolean move, turnr, turnl =false;
 int score=0;
-int hp=100;
+int hp=0;
 int hscore=0;
 public void setup() 
 {
