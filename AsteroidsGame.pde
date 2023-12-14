@@ -128,6 +128,8 @@ void mousePressed() {
 bob.setspeedx(0);
 bob.setspeedy(0);
 bob.direct(0);
+bob.setcx();
+    bob.setcy();
   score=0;
   }
 }
