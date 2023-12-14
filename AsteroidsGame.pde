@@ -125,6 +125,9 @@ void mousePressed() {
   oob.add(new Bullet(bob));
   else if((mouseX<=539&&mouseX>=461)&&(mouseY<533&&mouseY>=507)){
   hp=100;
+speedx(0);
+speedy(0);
+
   score=0;
   }
 }
