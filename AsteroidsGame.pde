@@ -6,7 +6,7 @@ ArrayList <Asteroid> boo=new ArrayList <Asteroid>();
 boolean play=true;
 boolean move, turnr, turnl =false;
 int score=0;
-int hp=0;
+int hp=100;
 int hscore=0;
 public void setup() 
 {
@@ -124,7 +124,7 @@ void mousePressed() {
   if (play==true)
   oob.add(new Bullet(bob));
   else if((mouseX<=539&&mouseX>=461)&&(mouseY<533&&mouseY>=507)){
-  hp=10;
+  hp=100;
 bob.setspeedx(0);
 bob.setspeedy(0);
 bob.direct(0);
