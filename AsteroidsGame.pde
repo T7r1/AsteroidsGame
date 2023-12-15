@@ -124,12 +124,12 @@ void mousePressed() {
   if (play==true)
   oob.add(new Bullet(bob));
   else if((mouseX<=539&&mouseX>=461)&&(mouseY<533&&mouseY>=507)){
-  hp=100;
-//bob.setspeedx(0);
-//bob.setspeedy(0);
-//bob.direct(0);
-//bob.setcx(0);
-//    bob.setcy(0);
+  hp=10;
+bob.setspeedx(0);
+bob.setspeedy(0);
+bob.direct(0);
+bob.setcx(width/2);
+    bob.setcy(height/2);
   score=0;
   }
 }
