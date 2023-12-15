@@ -1,13 +1,16 @@
 class Asteroid extends Floater  
 {
   private int speed;
+   private int s;
+
   public Asteroid(){
   corners=(int)(Math.random()*10)+6;  //the number of corners, a triangular floater has 3   
   xCorners=new int[corners];   
   yCorners=new int[corners];  
+  s=(int)(Math.random()*8)+7;
   for (int i=0;i<corners;i++){
-   xCorners[i]=(int)(Math.cos(i*2*Math.PI/corners)*10);
-   yCorners[i]=(int)(Math.sin(i*2*Math.PI/corners)*10);
+   xCorners[i]=(int)(Math.cos(i*2*Math.PI/corners)*s);
+   yCorners[i]=(int)(Math.sin(i*2*Math.PI/corners)*s);
 
   }
   //xCorners[0]= -8;
