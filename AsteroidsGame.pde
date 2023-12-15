@@ -6,12 +6,12 @@ ArrayList <Asteroid> boo=new ArrayList <Asteroid>();
 boolean play=true;
 boolean move, turnr, turnl =false;
 int score=0;
-int hp=100;
+int hp=0;
 int hscore=0;
 public void setup() 
 {
   size(1000, 1000);
-  for (int i=0; i<75; i++) {
+  for (int i=0; i<65; i++) {
     boo.add(new Asteroid());
   }
   //for(int i=0;i<boo.size();i++)
@@ -124,7 +124,7 @@ void mousePressed() {
   if (play==true)
   oob.add(new Bullet(bob));
   else if((mouseX<=539&&mouseX>=461)&&(mouseY<533&&mouseY>=507)){
-  hp=100;
+  hp=10;
 bob.setspeedx(0);
 bob.setspeedy(0);
 bob.direct(0);
