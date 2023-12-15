@@ -88,14 +88,13 @@ class Floater //Do NOT modify the Floater class! Make changes in the Spaceship c
 public void setspeedx(double b){
 myXspeed=b;
 } public void setspeedy(double p){
-myyspeed=p;
+myYspeed=p;
 } public void direct(double j){
 myPointDirection=j;
-} Public void setcx(double a){
+} public void setcx(double a){
 myCenterX=a;
-}Public void setcy(double w){
+}public void setcy(double w){
 myCenterY=w;
 }
 
 }
-
