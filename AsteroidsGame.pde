@@ -44,7 +44,7 @@ hscore=score;
     boo.get(i).move();
     //ship collision
     if (play==true){
-    if (sqrt((float)(((boo.get(i).getcenx()-bob.getcenx()))*((boo.get(i).getcenx()-bob.getcenx()))+((boo.get(i).getceny()-bob.getceny()))*((boo.get(i).getceny()-bob.getceny()))))<12) {
+   if (sqrt((float)(((boo.get(i).getcenx()-bob.getcenx()))*((boo.get(i).getcenx()-bob.getcenx()))+((boo.get(i).getceny()-bob.getceny()))*((boo.get(i).getceny()-bob.getceny()))))<boo.get(i).getss()/2+8) {
       boo.remove(i);
       boo.add(new Asteroid());
 
@@ -54,7 +54,7 @@ hscore=score;
     }
     //bullet collison
     for (int u=oob.size()-1; u>=0; u--) {
-      if (sqrt((float)(((boo.get(i).getcenx()-oob.get(u).getcenx()))*((boo.get(i).getcenx()-oob.get(u).getcenx()))+((boo.get(i).getceny()-oob.get(u).getceny()))*((boo.get(i).getceny()-oob.get(u).getceny()))))<10) {
+      if (sqrt((float)(((boo.get(i).getcenx()-oob.get(u).getcenx()))*((boo.get(i).getcenx()-oob.get(u).getcenx()))+((boo.get(i).getceny()-oob.get(u).getceny()))*((boo.get(i).getceny()-oob.get(u).getceny()))))<boo.get(i).getss()/2+5) {
         oob.remove(u);
         boo.add(new Asteroid());
         score++;
