@@ -6,9 +6,9 @@ ArrayList <Asteroid> boo=new ArrayList <Asteroid>();
 boolean play=true;
 boolean move, turnr, turnl =false;
 int score=0;
-int hp=0;
+int hp=10;
 int hscore=0;
-public void setup() 
+public void setup()   
 {
   size(1000, 1000);
   for (int i=0; i<65; i++) {
@@ -44,7 +44,7 @@ hscore=score;
     boo.get(i).move();
     //ship collision
     if (play==true){
-   if (sqrt((float)(((boo.get(i).getcenx()-bob.getcenx()))*((boo.get(i).getcenx()-bob.getcenx()))+((boo.get(i).getceny()-bob.getceny()))*((boo.get(i).getceny()-bob.getceny()))))<boo.get(i).getss()/2+8) {
+    if (sqrt((float)(((boo.get(i).getcenx()-bob.getcenx()))*((boo.get(i).getcenx()-bob.getcenx()))+((boo.get(i).getceny()-bob.getceny()))*((boo.get(i).getceny()-bob.getceny()))))<boo.get(i).getss()/2+8) {
       boo.remove(i);
       boo.add(new Asteroid());
 
@@ -88,6 +88,15 @@ hscore=score;
   //Spaceship
   bob.show();
   bob.move();
+  //System.out.print(bob.getspx());
+    // System.out.print(width);
+
+//  bob.setcx(500);
+//  bob.setcy(500);
+//  bob.setspeedx(0);
+//  bob.setspeedy(0);
+//  bob.direct(0);
+ // bob.getspy();
 
   //IFFFFFFFFFFFS
 
