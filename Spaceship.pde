@@ -20,7 +20,7 @@ myPointDirection=0;
     }
    public void hyperspace(){
      myCenterX=(int)(Math.random()*width);
-     System.out.print(width);
+    // System.out.print(width);
 
   myCenterY=(int)(Math.random()*height);
   myXspeed=0;
