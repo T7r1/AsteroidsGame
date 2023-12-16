@@ -31,4 +31,8 @@ class Asteroid extends Floater
     super.move();
     myPointDirection+=speed;
   }
+  public int getss(){
+    return s;
+  }
+  
 }
